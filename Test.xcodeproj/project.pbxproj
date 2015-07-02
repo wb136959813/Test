@@ -90,6 +90,7 @@
 		62338F4D1B43CD6D00C3D536 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				62338F6F1B43D54100C3D536 /* img */,
 				62338F4E1B43CD6D00C3D536 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +111,29 @@
 				62338F641B43CD6D00C3D536 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62338F6F1B43D54100C3D536 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				62338F711B43D55A00C3D536 /* btn */,
+				62338F701B43D55200C3D536 /* bg */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		62338F701B43D55200C3D536 /* bg */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = bg;
+			sourceTree = "<group>";
+		};
+		62338F711B43D55A00C3D536 /* btn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = btn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
