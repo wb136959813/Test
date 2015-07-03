@@ -88,19 +88,19 @@ class ViewController: UIViewController {
         BtnGood.setImage(UIImage(named: "good.png"), forState: UIControlState.Normal)
         self.view.addSubview(BtnGood)
         
-        BtnGood.addTarget(self, action: Selector("OnGoodBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+        BtnGood.addTarget(self, action: Selector("OnGoodBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         var BtnBad = UIButton(frame: CGRectMake((ScreenX*0.1)+85, 380, 40, 40))
         BtnBad.setImage(UIImage(named: "bad.png"), forState: UIControlState.Normal)
         self.view.addSubview(BtnBad)
         
-        BtnBad.addTarget(self, action: Selector("OnBadBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+        BtnBad.addTarget(self, action: Selector("OnBadBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         var BtnComment = UIButton(frame: CGRectMake((ScreenX*0.1)+165, 380, 40, 40))
         BtnComment.setImage(UIImage(named: "msg"), forState: UIControlState.Normal)
         self.view.addSubview(BtnComment)
         
-        BtnComment.addTarget(self, action: Selector("OnCommentBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+        BtnComment.addTarget(self, action: Selector("OnCommentBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     //click OnGoodBtn button
