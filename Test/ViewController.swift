@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    var ScreenX: CGFloat = 0.0
+    var ScreenY: CGFloat = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
-        UserContext()
+        ScreenX = UIScreen.mainScreen().bounds.width
+        ScreenY = UIScreen.mainScreen().bounds.height
+        
+        UserMsg()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,82 +27,105 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //user send of infomation
-    func UserContext() {
-        var ImgBg:UIImageView//背景
-        var ImgHead:UIImageView//头像
-        var LabNick:UILabel//昵称
-        var TextCont:UITextView//内容
-        var ImgCont:UIImageView//内容附加图片
-        var LabVote:UILabel//投票
-        var BtnGood:UIButton//有用按钮
-        var BtnBad:UIButton//无用按钮
-        var BtnComment:UIButton//评论按钮
-        var TextComm:UITextField//评论
+    //user send of message
+    func UserMsg() {
+        SetMsgWidgetBackground()
         
-        var ScreenX = UIScreen.mainScreen().bounds.width
-        var ScreenY = UIScreen.mainScreen().bounds.height
+        SetMsgWidgetHead()
+        SetMsgWidgetNick()
         
+        SetMsgWidgetImgCont()
+        SetMsgWidgetImgDesc()
         
-        ImgBg = UIImageView(frame: CGRectMake(ScreenX*0.1, 40, ScreenX*0.8, 400))
-        ImgBg.layer.borderWidth = 1
-        ImgBg.layer.borderColor = UIColor.grayColor().CGColor
-        self.view.addSubview(ImgBg)
-        
-        
-        ImgHead = UIImageView(frame: CGRectMake((ScreenX*0.1)+2, 42, 20, 20))
-        //ImgHead.layer.backgroundColor = UIColor.redColor().CGColor
-        ImgHead.image = UIImage(named: "male.jpg")
-        self.view.addSubview(ImgHead)
-        
-        LabNick = UILabel(frame: CGRectMake(65, 42, 100, 20))
-        LabNick.text = "tester"
-        self.view.addSubview(LabNick)
-        
-        ImgCont = UIImageView(frame: CGRectMake((ScreenX*0.1)+2, 65, ScreenX*0.8 - 4, 200))
-        ImgCont.layer.borderWidth = 1
-        ImgCont.layer.borderColor = UIColor.grayColor().CGColor
-        ImgCont.image = UIImage(named: "female.jpg")
-        self.view.addSubview(ImgCont)
-        
-        TextCont = UITextView(frame: CGRectMake((ScreenX*0.1)+2, 275, ScreenX*0.8 - 4, 50))
-        TextCont.layer.borderWidth = 1
-        TextCont.layer.borderColor = UIColor.grayColor().CGColor
-        TextCont.text = "testtesttestte\r\nsttesttesttesttesttes\r\nttesttesttesttest"
-        self.view.addSubview(TextCont)
-        
-        LabVote = UILabel(frame: CGRectMake((ScreenX*0.1)+2, 335, ScreenX*0.8, 10))
-        LabVote.text = "有用 100 － 没用100  评论100"
-        self.view.addSubview(LabVote)
-        
-        BtnGood = UIButton(frame: CGRectMake((ScreenX*0.1)+2, 355, 20, 20))
-        //BtnGood.titleLabel!.font = UIFont.systemFontOfSize(12)
-        //BtnGood.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //BtnGood.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
+        SetMsgWidgetVote()
+        SetMsgWidgetVoteBtn()
+    }
+    
+    //set messsage widget background
+    func SetMsgWidgetBackground(){
+        var ImgBg = UIImageView(frame: CGRectMake(ScreenX*0.1, 40, ScreenX*0.8, 400))
+            ImgBg.layer.borderWidth = 1
+            ImgBg.layer.borderColor = UIColor.grayColor().CGColor
+            self.view.addSubview(ImgBg)
+    }
+    //set messsage widget user head Image
+    func SetMsgWidgetHead(){
+        var ImgHead = UIImageView(frame: CGRectMake((ScreenX*0.1)+2, 42, 45, 45))
+            ImgHead.image = UIImage(named: "male.jpg")
+            self.view.addSubview(ImgHead)
+    }
+    //set messsage widget user Nick
+    func SetMsgWidgetNick(){
+        var LabNick = UILabel(frame: CGRectMake(90, 52, 100, 20))
+            LabNick.text = "tester"
+            self.view.addSubview(LabNick)
+    }
+    //set message widget Image
+    func SetMsgWidgetImgCont(){
+        var ImgCont = UIImageView(frame: CGRectMake((ScreenX*0.1)+2, 95, ScreenX*0.8 - 4, 200))
+            ImgCont.layer.borderWidth = 1
+            ImgCont.layer.borderColor = UIColor.grayColor().CGColor
+            ImgCont.image = UIImage(named: "female.jpg")
+            self.view.addSubview(ImgCont)
+    }
+    //set message widget Image descprition
+    func SetMsgWidgetImgDesc(){
+        var TextCont = UITextView(frame: CGRectMake((ScreenX*0.1)+2, 300, ScreenX*0.8 - 4, 50))
+            TextCont.layer.borderWidth = 1
+            TextCont.layer.borderColor = UIColor.grayColor().CGColor
+            TextCont.text = "testtesttestte\r\nsttesttesttesttesttes\r\nttesttesttesttest"
+            self.view.addSubview(TextCont)
+    }
+    //set message widget vote show
+    func SetMsgWidgetVote(){
+        var LabVote = UILabel(frame: CGRectMake((ScreenX*0.1)+2, 365, ScreenX*0.8, 10))
+            LabVote.text = "有用 100 － 没用 100  评论 100"
+            self.view.addSubview(LabVote)
+    }
+    //set message widget Vote button
+    func SetMsgWidgetVoteBtn(){
+        var BtnGood = UIButton(frame: CGRectMake((ScreenX*0.1)+5, 380, 40, 40))
         BtnGood.setImage(UIImage(named: "good.png"), forState: UIControlState.Normal)
-        //BtnGood.setTitle("good", forState: UIControlState.Normal)
         self.view.addSubview(BtnGood)
         
-        BtnBad = UIButton(frame: CGRectMake((ScreenX*0.1)+42, 355, 20, 20))
-        //BtnBad.titleLabel!.font = UIFont.systemFontOfSize(12)
-        //BtnBad.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //BtnBad.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
-        //BtnBad.setTitle("bad", forState: UIControlState.Normal)
+        BtnGood.addTarget(self, action: Selector("OnGoodBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var BtnBad = UIButton(frame: CGRectMake((ScreenX*0.1)+85, 380, 40, 40))
         BtnBad.setImage(UIImage(named: "bad.png"), forState: UIControlState.Normal)
         self.view.addSubview(BtnBad)
         
-        BtnComment = UIButton(frame: CGRectMake((ScreenX*0.1)+82, 355, 20, 20))
-        //BtnComment.titleLabel!.font = UIFont.systemFontOfSize(12)
-        //BtnComment.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //BtnComment.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
-        //BtnComment.setTitle("say", forState: UIControlState.Normal)
-        BtnComment.setImage(UIImage(named: "comment.png"), forState: UIControlState.Normal)
+        BtnBad.addTarget(self, action: Selector("OnBadBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var BtnComment = UIButton(frame: CGRectMake((ScreenX*0.1)+165, 380, 40, 40))
+        BtnComment.setImage(UIImage(named: "msg"), forState: UIControlState.Normal)
         self.view.addSubview(BtnComment)
         
-        /*TextComm = UITextField(frame: CGRectMake(42, 245, ScreenX*0.8, 50))
-        TextComm.layer.borderWidth = 1
-        TextComm.layer.borderColor = UIColor.grayColor().CGColor
-        self.view.addSubview(TextComm)*/
+        BtnComment.addTarget(self, action: Selector("OnCommentBtn"), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    //click OnGoodBtn button
+    func OnGoodBtn(Btn:UIButton){
+        let msg = UIAlertView()
+        msg.title = "btn"
+        msg.message = "OnGoodBtn"
+        msg.addButtonWithTitle("go")
+        msg.show()
+    }
+    //click OnBadBtn button
+    func OnBadBtn(Btn:UIButton){
+        let msg = UIAlertView()
+        msg.title = "btn"
+        msg.message = "OnBadBtn"
+        msg.addButtonWithTitle("go")
+        msg.show()
+    }
+    //click OnCommentBtn button
+    func OnCommentBtn(Btn:UIButton){
+        let msg = UIAlertView()
+        msg.title = "btn"
+        msg.message = "OnCommentBtn"
+        msg.addButtonWithTitle("go")
+        msg.show()
     }
 }
 
