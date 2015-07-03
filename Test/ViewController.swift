@@ -86,21 +86,31 @@ class ViewController: UIViewController {
     func SetMsgWidgetVoteBtn(){
         var BtnGood = UIButton(frame: CGRectMake((ScreenX*0.1)+5, 380, 40, 40))
         BtnGood.setImage(UIImage(named: "good.png"), forState: UIControlState.Normal)
+        BtnGood.setTitle("BtnGood", forState: UIControlState.Normal)
         self.view.addSubview(BtnGood)
         
         BtnGood.addTarget(self, action: Selector("OnGoodBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         var BtnBad = UIButton(frame: CGRectMake((ScreenX*0.1)+85, 380, 40, 40))
         BtnBad.setImage(UIImage(named: "bad.png"), forState: UIControlState.Normal)
+        BtnBad.setTitle("BtnBad", forState: UIControlState.Normal)
         self.view.addSubview(BtnBad)
         
         BtnBad.addTarget(self, action: Selector("OnBadBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         var BtnComment = UIButton(frame: CGRectMake((ScreenX*0.1)+165, 380, 40, 40))
         BtnComment.setImage(UIImage(named: "msg"), forState: UIControlState.Normal)
+        BtnComment.setTitle("BtnComment", forState: UIControlState.Normal)
         self.view.addSubview(BtnComment)
         
         BtnComment.addTarget(self, action: Selector("OnCommentBtn:"), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    //set input widget
+    func SetInputText(){
+        var TextComment = UITextField(frame: CGRectMake((ScreenX*0.1), ScreenY - 5, ScreenX*0.8, 40))
+            TextComment.layer.borderWidth = 1
+            TextComment.layer.borderColor = UIColor.grayColor().CGColor
+        self.view.addSubview(TextComment)
     }
     
     //click OnGoodBtn button
@@ -121,11 +131,13 @@ class ViewController: UIViewController {
     }
     //click OnCommentBtn button
     func OnCommentBtn(Btn:UIButton){
-        let msg = UIAlertView()
+        /*let msg = UIAlertView()
         msg.title = "btn"
-        msg.message = "OnCommentBtn"
+        msg.message = Btn.titleForState(.Normal)
         msg.addButtonWithTitle("go")
-        msg.show()
+        msg.show()*/
+        
+        SetInputText()
     }
 }
 
