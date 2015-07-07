@@ -17,14 +17,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         ScreenX = UIScreen.mainScreen().bounds.width
         ScreenY = UIScreen.mainScreen().bounds.height
         
+
+        
         UserMsg()
-        UserMsg()
-        UserMsg()
-        UserMsg()
-        UserMsg()
+        //UserMsg()
+        //UserMsg()
+        //UserMsg()
+        //UserMsg()
         //SetNav()
     }
 

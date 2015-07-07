@@ -13,6 +13,7 @@
 		62338F571B43CD6D00C3D536 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62338F561B43CD6D00C3D536 /* Images.xcassets */; };
 		62338F5A1B43CD6D00C3D536 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62338F581B43CD6D00C3D536 /* LaunchScreen.xib */; };
 		62338F661B43CD6D00C3D536 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62338F651B43CD6D00C3D536 /* TestTests.swift */; };
+		62D8B4D91B4B9E3E00A47305 /* AppBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D8B4D81B4B9E3D00A47305 /* AppBackground.png */; };
 		62EEA59F1B4544010027DDD4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EEA59E1B4544010027DDD4 /* icon.png */; };
 		62EEA5A31B4544250027DDD4 /* bad.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EEA5A01B4544250027DDD4 /* bad.png */; };
 		62EEA5A51B4544250027DDD4 /* good.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EEA5A21B4544250027DDD4 /* good.png */; };
@@ -42,6 +43,7 @@
 		62338F5F1B43CD6D00C3D536 /* TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62338F641B43CD6D00C3D536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62338F651B43CD6D00C3D536 /* TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTests.swift; sourceTree = "<group>"; };
+		62D8B4D81B4B9E3D00A47305 /* AppBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppBackground.png; sourceTree = "<group>"; };
 		62EEA59E1B4544010027DDD4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = img/icon.png; sourceTree = SOURCE_ROOT; };
 		62EEA5A01B4544250027DDD4 /* bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bad.png; path = img/bad.png; sourceTree = SOURCE_ROOT; };
 		62EEA5A21B4544250027DDD4 /* good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = good.png; path = img/good.png; sourceTree = SOURCE_ROOT; };
@@ -139,6 +141,7 @@
 		62338F701B43D55200C3D536 /* bg */ = {
 			isa = PBXGroup;
 			children = (
+				62D8B4D81B4B9E3D00A47305 /* AppBackground.png */,
 			);
 			name = bg;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62EEA59F1B4544010027DDD4 /* icon.png in Resources */,
+				62D8B4D91B4B9E3E00A47305 /* AppBackground.png in Resources */,
 				62EEA5A51B4544250027DDD4 /* good.png in Resources */,
 				62EEA5A81B45443C0027DDD4 /* female.jpg in Resources */,
 				62EEA5A91B45443C0027DDD4 /* male.jpg in Resources */,
